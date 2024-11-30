@@ -37,8 +37,7 @@ lint:
 .PHONY: format
 format:
 	black --config pyproject.toml us_congress_members_trading_analysis
-
-
+	find . -name "*.ipynb" | xargs -I {} black --config pyproject.toml {}
 
 
 ## Set up python interpreter environment
