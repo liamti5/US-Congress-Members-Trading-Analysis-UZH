@@ -1,1 +1,1 @@
-from us_congress_members_trading_analysis import config  # noqa: F401
+from . import config  # noqa: F401

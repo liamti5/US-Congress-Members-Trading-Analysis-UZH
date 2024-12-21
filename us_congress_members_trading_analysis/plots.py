@@ -4,7 +4,7 @@ import typer
 from loguru import logger
 from tqdm import tqdm
 
-from us_congress_members_trading_analysis.config import FIGURES_DIR, PROCESSED_DATA_DIR
+from config import FIGURES_DIR, PROCESSED_DATA_DIR
 
 app = typer.Typer()
 
