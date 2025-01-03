@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "us_congress_members_trading_analysis"
 version = "0.0.1"
-description = "A short description of the project."
+description = ""
 authors = [
   { name = "Group 9, UZH" },
 ]
@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     
 ]
-requires-python = "~=3.12"
+requires-python = "~=3.11"
 
 [tool.black]
 line-length = 99

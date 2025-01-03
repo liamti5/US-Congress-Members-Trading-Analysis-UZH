@@ -3,7 +3,7 @@
 #################################################################################
 
 PROJECT_NAME = us-congress-members-trading-analysis
-PYTHON_VERSION = 3.12
+PYTHON_VERSION = 3.11
 PYTHON_INTERPRETER = python
 
 #################################################################################
@@ -17,8 +17,6 @@ requirements:
 	$(PYTHON_INTERPRETER) -m pip install -U pip
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 	
-
-
 
 ## Delete all compiled Python files
 .PHONY: clean
@@ -46,19 +44,6 @@ create_environment:
 	@bash -c "if [ ! -z `which virtualenvwrapper.sh` ]; then source `which virtualenvwrapper.sh`; mkvirtualenv $(PROJECT_NAME) --python=$(PYTHON_INTERPRETER); else mkvirtualenv.bat $(PROJECT_NAME) --python=$(PYTHON_INTERPRETER); fi"
 	@echo ">>> New virtualenv created. Activate with:\nworkon $(PROJECT_NAME)"
 	
-
-
-
-#################################################################################
-# PROJECT RULES                                                                 #
-#################################################################################
-
-
-## Make Dataset
-.PHONY: data
-data: requirements
-	$(PYTHON_INTERPRETER) us_congress_members_trading_analysis/dataset.py
-
 
 #################################################################################
 # Self Documenting Commands                                                     #
