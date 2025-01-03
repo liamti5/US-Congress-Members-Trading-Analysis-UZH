@@ -1,70 +1,32 @@
 # us-congress-members-trading-analysis
+> [!NOTE]  
+> This repository was created as a final project for the Network Science course at the University of Zurich.
 
-## Naming Conventions for Jupyter Notebooks
+This repository investigates trading patterns of US Congress members using network science techniques. By constructing and analyzing networks based on historical trade data, the project aims to uncover patterns and communities that may indicate suspicious trading behaviors.
 
-`0.01-pjb-data-source-1.ipynb`
 
-- 0.01 - Helps keep work in chronological order. The structure is PHASE.NOTEBOOK. NOTEBOOK is just the Nth notebook in that phase to be created.
-  - 0 - Data exploration
-  - 1 - Data cleaning and feature creation
-  - 2 - Visualizations
-  - 3 - Modeling - training machine learning models
-  - 4 - Publication - Notebooks that get turned directly into reports
-- pjb - Authors initials; this is helpful for knowing who created the notebook and prevents collisions from people working in the same notebook.
-- data-source-1 - A description of what the notebook covers
+## **Project Overview**
+The project focuses on the following aspects:
+- **Data Collection**: Trading data was sourced from the [QuiverQuant API](https://www.quiverquant.com/) and the [Congress Trades Dashboard](https://github.com/adrianmross/congress_trades_dashboard).
+- **Graph Creation**: Networks were built with nodes representing Congress members and edges connecting members with similar trading activities.
+- **Graph Analysis**: Statistical properties, community detection, and centrality measures were explored.
+- **Graph Machine Learning**: Predictive analysis was conducted to identify anomalous trading returns.
 
-## Project Organization
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         us_congress_members_trading_analysis and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── us_congress_members_trading_analysis   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes us_congress_members_trading_analysis a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+## **Key Findings**
+The main findings and insights are summarized in the `reports/report.ipynb` notebook. These include:
+- Statistical properties of the networks.
+- Community structures and their implications.
+- Centrality metrics and key influencers within the network.
+- Predictive modeling results for identifying anomalous returns.
+For in-depth exploration, refer to the notebooks in the `notebooks` folder:
 
---------
+
+## **Data Sources**
+- [QuiverQuant API](https://www.quiverquant.com/)
+- [Congress Trades Dashboard](https://github.com/adrianmross/congress_trades_dashboard)
+
+---
 
 ##  Setting up Development Environment using Docker to reproduce our findings
 
@@ -96,4 +58,52 @@ docker build -t us-congress-trading .
 ```bash
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 ```
+---
+
+## Naming Conventions for Jupyter Notebooks (based on [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/))
+
+`0.01-pjb-data-source-1.ipynb`
+
+- 0.01 - Helps keep work in chronological order. The structure is PHASE.NOTEBOOK. NOTEBOOK is just the Nth notebook in that phase to be created.
+  - 0 - Data exploration
+  - 1 - Data cleaning and feature creation
+  - 2 - Visualizations
+  - 3 - Modeling - training machine learning models
+  - 4 - Publication - Notebooks that get turned directly into reports
+- pjb - Authors initials; this is helpful for knowing who created the notebook and prevents collisions from people working in the same notebook.
+- data-source-1 - A description of what the notebook covers
+
+---
+
+## Project Organization
+
+```
+├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
+├── README.md          <- The top-level README for developers using this project.
+├── data
+│   ├── external       <- Data from third party sources.
+│   └── internal       <- Internal data that has been transformed.
+│
+├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                         the creator's initials, and a short `-` delimited description, e.g.
+│                         `1.0-jqp-initial-data-exploration`.
+│
+├── reports            <- Contains the main jupyter notebook report.
+│
+├── pyproject.toml     <- Project configuration file with package metadata for 
+│                         us_congress_members_trading_analysis and configuration for tools like black
+│
+├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+│                         generated with `pip freeze > requirements.txt`
+│
+├── setup.cfg          <- Configuration file for flake8
+│
+└── us_congress_members_trading_analysis   <- Source code for use in this project.
+    │
+    ├── __init__.py             <- Makes us_congress_members_trading_analysis a Python module
+    │
+    └── config.py               <- Store useful variables and configuration
+```
+
+
 
