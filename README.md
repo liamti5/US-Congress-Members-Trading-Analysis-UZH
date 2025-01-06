@@ -19,7 +19,7 @@ The main findings and insights are summarized in the `reports/report.ipynb` note
 - Community structures and their implications.
 - Centrality metrics and key influencers within the network.
 - Predictive modeling results for identifying anomalous returns.
-For in-depth exploration, refer to the notebooks in the `notebooks` folder:
+For in-depth exploration, refer to the notebooks in the `notebooks` folder.
 
 
 ## **Data Sources**
